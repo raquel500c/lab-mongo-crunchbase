@@ -41,7 +41,7 @@ mongoClient.connect(url, (error, db) => {
         });
         break;
         case "3":
-        db.collection('companies').find({founded_year: {$eq:2004}}, {}).count((error, result) => {
+        db.collection('companies').find({founded_year: 2004}, {}).count((error, result) => {
           if (error) {
             console.log(error);
             rl.question(`\nType enter to continue: `, (answer) => { mainMenu(); });
@@ -52,7 +52,7 @@ mongoClient.connect(url, (error, db) => {
           });
           break;
         case "4":
-        db.collection('companies').find({founded_year: {$eq:2004},founded_month: {$eq:2}},{name: 1, _id: 0}).toArray((error, result) => {
+        db.collection('companies').find({founded_year: 2004, founded_month: 2},{name: 1, _id: 0}).toArray((error, result) => {
           if (error) {
             console.log(error);
             rl.question(`\nType enter to continue: `, (answer) => { mainMenu(); });
