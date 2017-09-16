@@ -88,7 +88,6 @@ mongoClient.connect(url, (error, db) => {
             }
             });
           break;
-          //DONE--> PENDIENTE  HACER COMMIT
         case "7": //List the 10 companies with more employees sorted ascending (show name and employees)
           db.collection('companies').find({}, {name: 1, description:1, number_of_employees: 1, _id: 0})
           .limit(10).sort({number_of_employees: -1}).toArray((error, result) => {
@@ -101,7 +100,6 @@ mongoClient.connect(url, (error, db) => {
             }
             });
           break;
-          // DONE --> PENDIENTE  HACER COMMIT
         case "8": //Find the company with the name "Facebook"
           db.collection('companies').find({name:"Facebook"}, {name: 1, description:1, _id: 0})
           .toArray((error, result) => {
@@ -113,8 +111,7 @@ mongoClient.connect(url, (error, db) => {
               rl.question(`\nType enter to continue: `, (answer) => { mainMenu(); });
             }
             });
-          break;
-          // DONE --> PENDIENTE  HACER COMMIT
+          break;          
         case "9": //How many employees has Facebook?
           db.collection('companies').find({name:"Facebook"}, {name: 1, number_of_employees: 1, _id: 0})
           .toArray((error, result) => {
